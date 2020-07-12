@@ -43,12 +43,12 @@
 <div class="row mt-3">
     <div class="col-md-6 col-lg-6 col-sm-6 col-6">
         <label class="control-label">Data inicial</label>
-        <input type="date" name="date_init" class="form-control" value="@if(isset($study)) {{ $study->date_init }} @endif">
+        <input type="date" name="date_init" class="form-control" value="{{ isset($study) ? $study->date_init : '' }}">
     </div>
 
     <div class="col-md-6 col-lg-6 col-sm-6 col-6">
         <label class="control-label">Data final</label>
-        <input type="date" name="date_finish" class="form-control">
+        <input type="date" name="date_finish" class="form-control" value="{{ isset($study) ? $study->date_finish : '' }}">
     </div>
 
 </div>
@@ -57,10 +57,10 @@
     <div class="col-md-6 col-sm-6 col-lg-6 col-6">
         <label class="control-label">Situação</label>
         <select name="status" class="form-control">
-            <option value="" disabled selected></option>
-            <option value="Finalizado">Finalizado</option>
-            <option value="Em atraso">Em atraso</option>
-            <option value="Em andamento">Em andamento</option>
+            <option value="" disabled {{ !isset($study) ? 'selected' : ''  }}></option>
+            <option value="Finalizado" {{ isset($study) && $study->status == 'Finalizado' ? 'selected' : ''  }}> Finalizado</option>
+            <option value="Em atraso" {{ isset($study) && $study->status == 'Em atraso' ? 'selected' : ''  }}> Em atraso</option>
+            <option value="Em andamento" {{ isset($study) && $study->status == 'Em andamento' ? 'selected' : ''  }}> Em andamento</option>
         </select>
     </div>
 </div>

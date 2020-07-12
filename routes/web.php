@@ -34,4 +34,6 @@ Route::resource('areas', 'AreaController')->except('show');
 
 Route::resource('studies', 'StudyController')->except('show');
 
+Route::resource('dashboards', 'DashboardController')->except('show');
+
 

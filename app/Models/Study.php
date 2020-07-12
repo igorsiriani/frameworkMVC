@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Status;
 use Illuminate\Database\Eloquent\Model;
 
 class Study extends Model
@@ -19,5 +20,10 @@ class Study extends Model
     public function area() {
 //        return $this->belongsTo(Area::class, 'area_id', 'id');
         return $this->belongsTo(Area::class);
+    }
+
+    public function status() {
+//        return $this->belongsTo(Area::class, 'area_id', 'id');
+        return $this->belongsTo(Status::class);
     }
 }

@@ -1,0 +1,56 @@
+.dashboardCard {
+    transition-duration: 0.25s;
+    padding: 10px;
+    background: white;
+    border: 1px solid #dddddd;
+    border-radius: 15px;
+    margin-right: 5vw;
+    display: inline-block;
+    margin-top: 15px;
+    margin-bottom: 15px
+}
+
+.dashboardTitle {
+    text-align: center;
+}
+
+.dashboardContent {
+    margin-top: 45px;
+    text-align: center;
+}
+
+.finalizado {
+    border-bottom: 3px solid #9dff3f;
+}
+
+.emAndamento {
+    border-bottom: 3px solid #ffb93f;
+}
+
+.emAtraso {
+    border-bottom: 3px solid #fc4040;
+}
+
+.finalizado:hover {
+    border-top: 2px solid #9dff3f;
+    border-bottom: 4px solid #9dff3f;
+    transform: scale(1.01);
+    box-shadow: 0 8px 10px rgba(76, 76, 76, 0.49);
+    margin-top: 14px;
+}
+
+.emAndamento:hover {
+    border-top: 2px solid #ffb93f;
+    border-bottom: 4px solid #ffb93f;
+    transform: scale(1.01);
+    box-shadow: 0 8px 10px rgba(76, 76, 76, 0.49);
+    margin-top: 14px;
+}
+
+.emAtraso:hover {
+    border-top: 2px solid #fc4040;
+    border-bottom: 4px solid #fc4040;
+    transform: scale(1.01);
+    box-shadow: 0 8px 10px rgba(76, 76, 76, 0.49);
+    margin-top: 14px;
+}

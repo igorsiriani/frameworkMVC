@@ -29,7 +29,7 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        $studies = $this->study->select('status', DB::raw('count(*) as total'))->groupBy('status')->orderByRaw("FIELD(status , 'Em atraso', 'Em andamento', 'Finalizado') ASC")->get();
+        $studies = $this->study->statusStudies();
 
         // prepare empty array
         $result = array('Em atraso' => 0, 'Em andamento' => 0, 'Finalizado' => 0);

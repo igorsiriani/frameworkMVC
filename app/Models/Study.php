@@ -4,6 +4,7 @@ namespace App\Models;
 
 use App\Status;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
 
 class Study extends Model
 {
@@ -22,8 +23,8 @@ class Study extends Model
         return $this->belongsTo(Area::class);
     }
 
-    public function status() {
-//        return $this->belongsTo(Area::class, 'area_id', 'id');
-        return $this->belongsTo(Status::class);
+    public function statusStudies() {
+        return $this->select('status', DB::raw('count(*) as total'))->groupBy('status')->orderByRaw("FIELD(status , 'Em atraso', 'Em andamento', 'Finalizado') ASC")->get();
     }
+
 }
